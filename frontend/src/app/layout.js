@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import { playfair, poppins, greatVibes } from "./fonts";
 import "./globals.css";
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         <div className="">{children}</div>
+        <Footer />
       </body>
     </html>
   );
