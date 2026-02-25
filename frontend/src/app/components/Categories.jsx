@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import ViewBtn from "./ViewBtn";
 
 const Categories = () => {
   const categories = [
@@ -45,9 +46,7 @@ const Categories = () => {
       </div>
 
       <div>
-        <button className="px-5 py-2 rounded-full text-black font-bold">
-          View All
-        </button>
+        <ViewBtn />
       </div>
     </div>
   );
