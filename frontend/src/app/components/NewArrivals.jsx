@@ -6,7 +6,7 @@ import Headers from "./Headers";
 const NewArrivals = () => {
   const newArrivals = products.slice(-5);
   return (
-    <div className="py-10 px-20">
+    <div className="py-10 px-4 sm:px-10 lg:px-20">
       <Headers
         title="New Arrivals"
         description="Straight from the atelier. The latest expressions of our craft"

@@ -4,21 +4,21 @@ import { Heart } from "lucide-react";
 
 const ProductGrid = ({ products = [] }) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
       {products.map((product) => (
         <div key={product.id} className="group">
-          <div className="relative rounded-2xl overflow-hidden w-[300px] h-[300px]">
+          <div className="relative rounded-2xl overflow-hidden w-full h-[400px]">
             <Image
               src={product.image}
               alt={product.name}
               width={300}
-              height={300}
+              height={400}
               className="w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
             />
             <Heart className="absolute top-2 right-3 w-7 h-7 text-glams-pink cursor-pointer bg-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-all duration-300" />
           </div>
           <div className="pt-3">
-            <div className="flex justify-between w-[80%] gap-2">
+            <div className="flex justify-between gap-2">
               <p className="text-xs font-poppins uppercase text-glams-charcoal">
                 {product.category}
               </p>

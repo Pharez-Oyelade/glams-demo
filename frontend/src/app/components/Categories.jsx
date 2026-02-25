@@ -23,14 +23,14 @@ const Categories = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center my-20 px-20">
-      <div className="flex items-center gap-8">
+    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6 my-12 sm:my-20 px-4 sm:px-10 lg:px-20">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8">
         <h2 className="text-xl font-bold">Categories</h2>
 
-        <div className="flex items-center gap-10">
+        <div className="flex items-center gap-4 sm:gap-6 lg:gap-10 flex-wrap">
           {categories.map((category) => (
             <div key={category.name}>
-              <div className="overflow-hidden w-[80px] h-[80px] rounded-full border-3 border-gray-200">
+              <div className="overflow-hidden w-[64px] h-[64px] sm:w-[80px] sm:h-[80px] rounded-full border-3 border-gray-200">
                 <Image
                   src={category.image}
                   alt={category.name}
@@ -45,7 +45,7 @@ const Categories = () => {
         </div>
       </div>
 
-      <div>
+      <div className="self-start sm:self-auto">
         <ViewBtn BtnText="View All" />
       </div>
     </div>
