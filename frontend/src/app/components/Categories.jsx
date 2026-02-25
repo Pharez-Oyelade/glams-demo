@@ -46,7 +46,7 @@ const Categories = () => {
       </div>
 
       <div>
-        <ViewBtn />
+        <ViewBtn BtnText="View All" />
       </div>
     </div>
   );
