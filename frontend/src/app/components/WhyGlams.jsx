@@ -1,7 +1,19 @@
 import React from "react";
+import Headers from "./Headers";
+import WhyCards from "./WhyCards";
 
 const WhyGlams = () => {
-  return <div>WhyGlams</div>;
+  return (
+    <section className="bg-glams-butter px-20 py-10">
+      <Headers
+        title="Why Glams"
+        description="We don't just sell clothes, we deliver a piece of culture wrapped in luxury"
+        text="Read Our Story"
+      />
+
+      <WhyCards />
+    </section>
+  );
 };
 
 export default WhyGlams;
