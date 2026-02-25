@@ -11,10 +11,10 @@ const Hero = () => {
           className="
             relative
             w-full md:w-[45%]
-            h-[55vw] sm:h-[60vw] md:h-[calc(100vh-7rem)]
+            h-[90vw] sm:h-[80vw] md:h-[calc(100vh-7rem)]
             rounded-tr-[3rem] rounded-bl-[3rem]
             overflow-hidden
-            flex-shrink-0
+            
             shadow-[0_32px_80px_-10px_rgba(0,0,0,0.18)]
           "
         >
