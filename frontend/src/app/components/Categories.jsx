@@ -30,7 +30,7 @@ const Categories = () => {
         <div className="flex items-center gap-4 sm:gap-6 lg:gap-10 flex-wrap">
           {categories.map((category) => (
             <div key={category.name}>
-              <div className="overflow-hidden w-[64px] h-[64px] sm:w-[80px] sm:h-[80px] rounded-full border-3 border-gray-200">
+              <div className="overflow-hidden w-[64px] h-[64px] sm:w-[80px] sm:h-[80px] rounded-full border-3 border-gray-200 hover:border-glams-pink transition-all duration-300 cursor-pointer">
                 <Image
                   src={category.image}
                   alt={category.name}
