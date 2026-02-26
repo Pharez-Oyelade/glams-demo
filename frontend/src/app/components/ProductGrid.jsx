@@ -7,12 +7,12 @@ const ProductGrid = ({ products = [] }) => {
     <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
       {products.map((product) => (
         <div key={product.id} className="group">
-          <div className="relative rounded-2xl overflow-hidden w-full h-[400px]">
+          <div className="relative rounded-2xl overflow-hidden w-full h-[300px]">
             <Image
               src={product.image}
               alt={product.name}
               width={300}
-              height={400}
+              height={300}
               className="w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
             />
             <Heart className="absolute top-2 right-3 w-7 h-7 text-glams-pink cursor-pointer bg-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-all duration-300" />
