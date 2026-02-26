@@ -40,6 +40,7 @@ const CartContextProvider = (props) => {
     <CartContext.Provider
       value={{
         cart,
+        setCart,
         total,
         addToCart,
         formatPrice,
