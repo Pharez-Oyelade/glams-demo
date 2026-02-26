@@ -81,7 +81,7 @@ export default function WhatsAppChat() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-[#25D366] text-white p-4 rounded-full shadow-lg flex items-center justify-center"
+        className="bg-[#25D366] text-white p-4 rounded-full shadow-lg flex items-center justify-center animate-pulse"
       >
         {isOpen ? (
           <X className="w-6 h-6" />
