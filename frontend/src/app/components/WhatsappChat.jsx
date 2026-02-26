@@ -64,7 +64,7 @@ export default function WhatsAppChat() {
               <input
                 type="text"
                 placeholder="Type your message..."
-                className="flex-1 text-sm border-none focus:ring-0 p-0"
+                className="flex-1 text-sm border-none focus:ring-0 focus:outline-0 p-0"
                 value={userMessage}
                 onChange={(e) => setUserMessage(e.target.value)}
               />
