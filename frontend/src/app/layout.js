@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 // import FloatingWhatsapp from "./components/FloatingWhatsapp";
 import WhatsAppChat from "./components/WhatsappChat";
@@ -7,6 +6,7 @@ import "./globals.css";
 
 import CartContextProvider from "./context/cartContext";
 import Cart from "./components/Cart";
+import ScrollToTop from "./components/ScrollToTop";
 
 export const metadata = {
   title: "Glams Wardrobe",
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         className={`${playfair.variable} ${poppins.variable} ${greatVibes.variable} bg-glams-butter`}
       >
         <CartContextProvider>
-          {/* <Navbar /> */}
+          <ScrollToTop />
           <div className="">{children}</div>
           <Footer />
           {/* <FloatingWhatsapp/>  */}

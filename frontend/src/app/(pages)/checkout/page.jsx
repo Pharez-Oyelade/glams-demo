@@ -117,6 +117,7 @@ export default function CheckoutPage() {
     const errs = validateDetails();
     if (Object.keys(errs).length > 0) {
       setErrors(errs);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
     setStep(1);
