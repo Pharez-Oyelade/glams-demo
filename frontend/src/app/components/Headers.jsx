@@ -9,7 +9,7 @@ const Headers = ({ title, description, text }) => {
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px 0px" }}
+      viewport={{ once: true, margin: "-100px 0px", amount: 0.8 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 sm:pb-0"
     >

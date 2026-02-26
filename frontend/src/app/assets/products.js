@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     name: "Product 1",
-    price: 100,
+    price: 45000,
     image: "/product1.jpg",
     description: "Product 1 description",
     category: "Skirts",
@@ -15,7 +15,7 @@ export const products = [
   {
     id: 2,
     name: "Product 2",
-    price: 200,
+    price: 200000,
     image: "/product2.jpg",
     description: "Product 2 description",
     category: "Skirts",
@@ -28,7 +28,7 @@ export const products = [
   {
     id: 3,
     name: "Product 3",
-    price: 300,
+    price: 35000,
     image: "/product3.jpg",
     description: "Product 3 description",
     category: "Skirts",
@@ -41,7 +41,7 @@ export const products = [
   {
     id: 4,
     name: "Product 4",
-    price: 400,
+    price: 40000,
     image: "/product4.jpg",
     description: "Product 4 description",
     category: "Skirts",
@@ -54,7 +54,7 @@ export const products = [
   {
     id: 5,
     name: "Product 5",
-    price: 500,
+    price: 50500,
     image: "/skirts.jpg",
     description: "Product 5 description",
     category: "Skirts",

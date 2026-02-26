@@ -5,6 +5,9 @@ import WhatsAppChat from "./components/WhatsappChat";
 import { playfair, poppins, greatVibes } from "./fonts";
 import "./globals.css";
 
+import CartContextProvider from "./context/cartContext";
+import Cart from "./components/Cart";
+
 export const metadata = {
   title: "Glams Wardrobe",
   description: "",
@@ -16,11 +19,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${playfair.variable} ${poppins.variable} ${greatVibes.variable} bg-glams-butter`}
       >
-        <Navbar />
-        <div className="">{children}</div>
-        <Footer />
-        {/* <FloatingWhatsapp/>  */}
-        <WhatsAppChat />
+        <CartContextProvider>
+          <Navbar />
+          <div className="">{children}</div>
+          <Footer />
+          {/* <FloatingWhatsapp/>  */}
+          <WhatsAppChat />
+          <Cart />
+        </CartContextProvider>
       </body>
     </html>
   );

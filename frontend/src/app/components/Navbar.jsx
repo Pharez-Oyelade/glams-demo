@@ -1,11 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Search, ShoppingBag, Menu } from "lucide-react";
+import { CartContext } from "../context/cartContext";
 
 const Navbar = () => {
+  const { getCartCount, setShowCart, showCart } = useContext(CartContext);
   const pathname = usePathname();
 
   const isActive = (path) => {
@@ -59,9 +61,12 @@ const Navbar = () => {
           <Search className="hover:text-glams-pink transition-colors duration-300 cursor-pointer" />
         </div>
         <div className="relative flex items-center gap-2" title="CART">
-          <ShoppingBag className="hover:text-glams-pink transition-colors duration-300 cursor-pointer" />
+          <ShoppingBag
+            onClick={() => setShowCart(!showCart)}
+            className="hover:text-glams-pink transition-colors duration-300 cursor-pointer"
+          />
           <span className="absolute -top-1 -right-1 bg-glams-pink text-white rounded-full px-1.5 text-xs">
-            0
+            {getCartCount()}
           </span>
         </div>
         <button className="hidden md:block bg-black hover:bg-glams-pink transition-colors duration-300 text-white px-6 py-2 rounded-full cursor-pointer text-sm font-bold">

@@ -1,11 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Heart } from "lucide-react";
+import { CartContext } from "../context/cartContext";
 
 const ProductGrid = ({ products = [] }) => {
+  const { addToCart, formatPrice } = useContext(CartContext);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -59,9 +61,12 @@ const ProductGrid = ({ products = [] }) => {
             <p className="text-sm font-poppins">{product.name}</p>
             <div className="flex">
               <p className="text-sm font-poppins text-glams-pink font-bold group-hover:opacity-0 group-hover:-translate-x-8 transition-all duration-300">
-                $ {product.price}
+                {formatPrice(product.price)}
               </p>
-              <p className="text-sm font-poppins text-glams-pink font-bold opacity-0 group-hover:opacity-100 group-hover:-translate-x-10 transition-all duration-300 cursor-pointer">
+              <p
+                onClick={() => addToCart(product)}
+                className="text-sm font-poppins text-glams-pink font-bold opacity-0 group-hover:opacity-100 group-hover:-translate-x-10 transition-all duration-300 cursor-pointer"
+              >
                 ADD TO CART
               </p>
             </div>
