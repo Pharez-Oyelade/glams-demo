@@ -14,7 +14,7 @@ const Hero = () => {
             h-[90vw] sm:h-[80vw] md:h-[calc(100vh-7rem)]
             rounded-tr-[3rem] rounded-bl-[3rem]
             overflow-hidden
-            
+            my-12 md:my-0
             shadow-[0_32px_80px_-10px_rgba(0,0,0,0.18)]
           "
         >
@@ -48,7 +48,7 @@ const Hero = () => {
         </div>
 
         {/* ── Right: editorial text panel ── */}
-        <div className="w-full md:w-[45%] lg:w-[42%] flex flex-col px-10 gap-7 pb-4 md:pb-10">
+        <div className="w-full md:w-[45%] lg:w-[42%] flex flex-col px-5 sm:px-8 md:px-10 lg:px-20 gap-7 pb-4 md:pb-10">
           {/* eyebrow */}
           <p
             className="
