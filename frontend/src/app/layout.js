@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         className={`${playfair.variable} ${poppins.variable} ${greatVibes.variable} bg-glams-butter`}
       >
         <CartContextProvider>
-          <Navbar />
+          {/* <Navbar /> */}
           <div className="">{children}</div>
           <Footer />
           {/* <FloatingWhatsapp/>  */}

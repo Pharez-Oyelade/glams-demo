@@ -2,6 +2,7 @@
 
 import React, { useContext } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShoppingBag, Trash2, ArrowRight } from "lucide-react";
 import { CartContext } from "../context/cartContext";
@@ -152,10 +153,14 @@ const Cart = () => {
                 {/* Checkout button */}
                 <button className="relative overflow-hidden w-full group bg-glams-charcoal text-white font-poppins text-xs font-bold uppercase tracking-widest py-4 flex items-center justify-center gap-3 transition-all duration-300">
                   <span className="absolute inset-0 bg-glams-pink translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300 ease-in-out" />
-                  <span className="relative z-10 flex items-center gap-2">
+                  <Link
+                    onClick={() => setShowCart(false)}
+                    href="/checkout"
+                    className="relative z-10 flex items-center gap-2"
+                  >
                     Proceed to Checkout
                     <ArrowRight className="w-4 h-4" />
-                  </span>
+                  </Link>
                 </button>
 
                 <button
