@@ -92,7 +92,7 @@ export default function WhatsAppChat() {
             role="img"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8"
+            className="w-6 h-6"
             fill="white"
           >
             <title>WhatsApp</title>
