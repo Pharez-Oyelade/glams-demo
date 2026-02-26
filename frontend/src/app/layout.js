@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import FloatingWhatsapp from "./components/FloatingWhatsapp";
+// import FloatingWhatsapp from "./components/FloatingWhatsapp";
+import WhatsAppChat from "./components/WhatsappChat";
 import { playfair, poppins, greatVibes } from "./fonts";
 import "./globals.css";
 
@@ -18,7 +19,8 @@ export default function RootLayout({ children }) {
         <Navbar />
         <div className="">{children}</div>
         <Footer />
-        <FloatingWhatsapp />
+        {/* <FloatingWhatsapp/>  */}
+        <WhatsAppChat />
       </body>
     </html>
   );

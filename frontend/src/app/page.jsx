@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import Categories from "./components/Categories";
 import NewArrivals from "./components/NewArrivals";
 import WhyGlams from "./components/WhyGlams";
+import Newsletter from "./components/Newsletter";
 
 const page = () => {
   return (
@@ -11,6 +12,7 @@ const page = () => {
       <Categories />
       <WhyGlams />
       <NewArrivals />
+      <Newsletter />
     </div>
   );
 };
