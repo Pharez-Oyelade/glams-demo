@@ -3,73 +3,94 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Heart } from "lucide-react";
+import { Heart, ShoppingBag } from "lucide-react";
 import { CartContext } from "../context/cartContext";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 
 const ProductGrid = ({ products = [] }) => {
   const { addToCart, formatPrice } = useContext(CartContext);
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 },
-    },
-  };
 
-  const item = {
-    hidden: { opacity: 0, scale: 0.95 },
-    show: { opacity: 1, scale: 1 },
-    amount: 0.8,
-  };
   return (
     <motion.div
-      variants={container}
+      variants={containerVariants}
       initial="hidden"
       whileInView="show"
-      className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8"
+      viewport={{ once: true }}
+      className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
     >
       {products.map((product) => (
-        <motion.div variants={item} key={product.id} className="group">
-          <div className="relative rounded-2xl overflow-hidden w-full h-[200px] sm:h-[350px]">
+        <motion.div
+          variants={itemVariants}
+          key={product.id}
+          className="group flex flex-col"
+        >
+          {/* Image wrapper */}
+          <div className="relative w-full overflow-hidden rounded-2xl bg-glams-blush aspect-3/4">
             <Image
               src={product.image}
               alt={product.name}
-              width={300}
-              height={350}
-              className="w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
+              fill
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-            <Heart className="absolute top-2 right-3 w-7 h-7 text-glams-pink cursor-pointer bg-white rounded-full p-1 opacity-100 md:opacity-0 group-hover:opacity-100 transition-all duration-300" />
-          </div>
-          <div className="pt-3">
-            <div className="flex justify-between gap-2">
-              <p className="text-xs font-poppins uppercase text-glams-charcoal">
-                {product.category}
-              </p>
-              <div
-                className={`flex gap-1 ${product.colors.length > 1 ? "justify-between" : "justify-center"}`}
+
+            {/* Top actions */}
+            <div className="absolute top-3 right-3 flex flex-col gap-2">
+              <button className="w-8 h-8 sm:w-9 sm:h-9 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                <Heart className="w-4 h-4 text-glams-pink" />
+              </button>
+            </div>
+
+            {/* Quick add — slides up from bottom */}
+            <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-350 ease-out">
+              <button
+                onClick={() => addToCart(product)}
+                className="w-full bg-glams-charcoal text-white font-poppins text-[11px] font-semibold uppercase tracking-widest py-3.5 flex items-center justify-center gap-2 hover:bg-glams-pink transition-colors duration-300"
               >
+                <ShoppingBag className="w-4 h-4" />
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          {/* Product info */}
+          <div className="pt-3.5 flex flex-col gap-1">
+            {/* Category + Colors row */}
+            <div className="flex items-center justify-between">
+              <span className="font-poppins text-[10px] uppercase tracking-widest text-glams-charcoal/50">
+                {product.category}
+              </span>
+              <div className="flex items-center gap-1">
                 {product.colors.map((color) => (
                   <div
                     key={color}
-                    className={`w-3 h-3 rounded-full`}
+                    className="w-2.5 h-2.5 rounded-full ring-1 ring-white ring-offset-1"
                     style={{ backgroundColor: color }}
                   />
                 ))}
               </div>
             </div>
 
-            <p className="text-sm font-poppins">{product.name}</p>
-            <div className="flex">
-              <p className="text-sm font-poppins text-glams-pink font-bold group-hover:opacity-0 group-hover:-translate-x-8 transition-all duration-300">
-                {formatPrice(product.price)}
-              </p>
-              <p
-                onClick={() => addToCart(product)}
-                className="text-sm font-poppins text-glams-pink font-bold opacity-0 group-hover:opacity-100 group-hover:-translate-x-10 transition-all duration-300 cursor-pointer"
-              >
-                ADD TO CART
-              </p>
-            </div>
+            {/* Name */}
+            <p className="font-poppins text-sm sm:text-[15px] text-glams-charcoal font-medium leading-snug">
+              {product.name}
+            </p>
+
+            {/* Price */}
+            <p className="font-poppins text-sm font-bold text-glams-pink mt-0.5">
+              {formatPrice(product.price)}
+            </p>
           </div>
         </motion.div>
       ))}
