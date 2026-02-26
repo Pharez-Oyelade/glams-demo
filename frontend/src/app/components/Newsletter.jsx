@@ -13,7 +13,7 @@ const Newsletter = () => {
               Get the latest updates on new arrivals and exclusive offers
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <input
               type="email"
               placeholder="Enter your email"
