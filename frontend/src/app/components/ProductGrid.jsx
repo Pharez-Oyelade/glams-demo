@@ -1,12 +1,33 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { Heart } from "lucide-react";
 
 const ProductGrid = ({ products = [] }) => {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, scale: 0.95 },
+    show: { opacity: 1, scale: 1 },
+    amount: 0.8,
+  };
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8"
+    >
       {products.map((product) => (
-        <div key={product.id} className="group">
+        <motion.div variants={item} key={product.id} className="group">
           <div className="relative rounded-2xl overflow-hidden w-full h-[200px] sm:h-[350px]">
             <Image
               src={product.image}
@@ -45,9 +66,9 @@ const ProductGrid = ({ products = [] }) => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
