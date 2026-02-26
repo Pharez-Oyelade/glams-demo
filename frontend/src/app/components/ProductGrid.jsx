@@ -47,13 +47,13 @@ const ProductGrid = ({ products = [] }) => {
 
             {/* Top actions */}
             <div className="absolute top-3 right-3 flex flex-col gap-2">
-              <button className="w-8 h-8 sm:w-9 sm:h-9 bg-white rounded-full flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+              <button className="w-8 h-8 sm:w-9 sm:h-9 bg-white rounded-full flex items-center justify-center shadow-md opacity-100 translate-y-0 md:opacity-0 md:group-hover:opacity-100 md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-300">
                 <Heart className="w-4 h-4 text-glams-pink" />
               </button>
             </div>
 
             {/* Quick add — slides up from bottom */}
-            <div className="absolute bottom-0 left-0 right-0 translate-y-full group-hover:translate-y-0 transition-transform duration-350 ease-out">
+            <div className="absolute bottom-0 left-0 right-0 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300 ease-out">
               <button
                 onClick={() => addToCart(product)}
                 className="w-full bg-glams-charcoal text-white font-poppins text-[11px] font-semibold uppercase tracking-widest py-3.5 flex items-center justify-center gap-2 hover:bg-glams-pink transition-colors duration-300"
@@ -75,7 +75,7 @@ const ProductGrid = ({ products = [] }) => {
                 {product.colors.map((color) => (
                   <div
                     key={color}
-                    className="w-2.5 h-2.5 rounded-full ring-1 ring-white ring-offset-1"
+                    className="w-2.5 h-2.5 rounded-full ring-1 ring-black/10 ring-offset-1"
                     style={{ backgroundColor: color }}
                   />
                 ))}
