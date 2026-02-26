@@ -7,7 +7,7 @@ const ProductGrid = ({ products = [] }) => {
     <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
       {products.map((product) => (
         <div key={product.id} className="group">
-          <div className="relative rounded-2xl overflow-hidden w-full h-[300px]">
+          <div className="relative rounded-2xl overflow-hidden w-full h-[200px] sm:h-[300px]">
             <Image
               src={product.image}
               alt={product.name}
