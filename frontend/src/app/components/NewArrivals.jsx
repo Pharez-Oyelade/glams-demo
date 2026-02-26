@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import ProductGrid from "./ProductGrid";
 import { products } from "../assets/products";
@@ -6,14 +8,15 @@ import Headers from "./Headers";
 const NewArrivals = () => {
   const newArrivals = products.slice(-5);
   return (
-    <div className="py-10 px-4 sm:px-10 lg:px-20">
+    <section className="py-14 sm:py-20 px-4 sm:px-10 lg:px-20">
       <Headers
+        tag="New In"
         title="New Arrivals"
-        description="Straight from the atelier. The latest expressions of our craft"
+        description="Straight from the atelier — the latest expressions of our craft."
         text="View All"
       />
       <ProductGrid products={newArrivals} />
-    </div>
+    </section>
   );
 };
 
