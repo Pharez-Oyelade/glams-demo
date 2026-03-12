@@ -111,10 +111,10 @@ const Hero = () => {
                 
               "
             >
-              GLAMS
+              ROSÉ
             </span>
             <br />
-            WARDROBE
+            CLOSET
           </motion.h1>
 
           {/* description */}

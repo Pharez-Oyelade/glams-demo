@@ -29,7 +29,7 @@ const buildWhatsAppMessage = (cart, total, form, formatPrice) => {
     .join("\n");
 
   const message =
-    `Hello Glams Wardrobe!\n\n` +
+    `Hello Rosé Closet!\n\n` +
     `I'd like to place an order:\n\n` +
     `*Items:*\n${itemLines}\n\n` +
     `*Order Total:* ${formatPrice(total)}\n\n` +
@@ -133,7 +133,7 @@ export default function CheckoutPage() {
 
   const handlePaystack = () => {
     // In production: initialise Paystack inline or redirect to payment link
-    alert("Demo mode: Paystack integration for paymnets in production.");
+    alert("Demo mode: Paystack integration for payments in production.");
     setOrderPlaced(true);
     setCart([]);
   };
@@ -204,7 +204,7 @@ export default function CheckoutPage() {
           href="/"
           className="font-great-vibes text-glams-pink text-2xl leading-none"
         >
-          Glams Wardrobe
+          Rosé Closet
         </Link>
         {/* Step pills */}
         <div className="flex items-center gap-3">

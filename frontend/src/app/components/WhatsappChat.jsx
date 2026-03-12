@@ -11,7 +11,7 @@ export default function WhatsAppChat() {
 
   const brandPhone = "2348137742724";
   const automatedGreeting =
-    "Hello Glamswardrobe! I'm interested in the new collection on your website.";
+    "Hello Rosécloset! I'm interested in the new collection on your website.";
 
   const handleSendMessage = (e) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ export default function WhatsAppChat() {
                   <MessageCircle className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="font-bold text-sm">Glamswardrobe</p>
+                  <p className="font-bold text-sm">Rosécloset</p>
                   <p className="text-[10px] opacity-80">
                     Replies in a few minutes
                   </p>

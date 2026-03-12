@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="px-4 sm:px-10 lg:px-20 py-20 flex flex-col md:flex-row justify-between items-start md:items-center gap-20">
         <div className="w-full space-y-5">
           <h3 className="font-great-vibes text-glams-pink text-2xl">
-            Glams Wardrobe
+            Rosé Closet
           </h3>
           <p className="text-glams-butter text-sm">
             Redifining African luxury fashion for the modern woman. Bold,

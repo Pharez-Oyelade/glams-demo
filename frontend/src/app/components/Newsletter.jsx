@@ -35,7 +35,7 @@ const Newsletter = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-playfair font-bold text-[clamp(2rem,5vw,3.5rem)] text-white leading-tight"
         >
-          Join the <span className="text-glams-pink italic">Glams</span> Circle
+          Join the <span className="text-glams-pink italic">Rosé</span> Circle
         </motion.h2>
 
         {/* Subtext */}

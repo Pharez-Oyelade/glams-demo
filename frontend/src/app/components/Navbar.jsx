@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <div className="fixed z-50 w-full px-5 md:px-20 bg-white py-3 md:py-5 shadow-sm flex items-center justify-between">
       <div className="font-great-vibes text-glams-pink text-2xl">
-        <Link href="/">Glams Wardrobe</Link>
+        <Link href="/">Rosé Closet</Link>
       </div>
 
       <div className="hidden md:block">
