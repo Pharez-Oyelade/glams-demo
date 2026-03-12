@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import ViewBtn from "./ViewBtn";
 
 const categories = [
-  { name: "Dresses", image: "/glams_bg.jpg", count: "24 pieces" },
-  { name: "Skirts", image: "/skirts.jpg", count: "18 pieces" },
-  { name: "Bubus", image: "/glams_bg.jpg", count: "12 pieces" },
-  { name: "Bottoms", image: "/skirts.jpg", count: "15 pieces" },
+  { name: "Dresses", image: "/product2.jpeg", count: "24 pieces" },
+  { name: "Skirts", image: "/skirts.jpeg", count: "18 pieces" },
+  { name: "Two piece", image: "/product3.jpeg", count: "12 pieces" },
+  { name: "Bottoms", image: "/bottoms.jpeg", count: "15 pieces" },
 ];
 
 const Categories = () => {
