@@ -42,7 +42,7 @@ const Hero = () => {
             className="absolute inset-0 w-full h-[150%]"
           >
             <Image
-              src="/glams_bg.jpg"
+              src="/product1.jpeg"
               alt="Glams Wardrobe – Hero"
               sizes="(max-width: 768px) 100vw, 45vw"
               fill
