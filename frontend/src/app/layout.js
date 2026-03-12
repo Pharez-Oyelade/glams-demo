@@ -9,7 +9,7 @@ import Cart from "./components/Cart";
 import ScrollToTop from "./components/ScrollToTop";
 
 export const metadata = {
-  title: "Glams Wardrobe",
+  title: "Rose Closet - Demo Build",
   description: "",
 };
 
