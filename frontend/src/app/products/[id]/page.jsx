@@ -58,7 +58,7 @@ const page = () => {
         {/* .................... PRODUCT DETAILS .................. */}
         <div className="w-full pt-5 md:sticky md:top-20 md:max-h-[75vh]">
           <div className="space-y-2">
-            <h1 className="font-bold text-5xl ">
+            <h1 className="font-bold text-3xl md:text-5xl">
               {product.name} - Demo Product
             </h1>
             <p className="text-2xl">{formatPrice(product.price)}</p>
