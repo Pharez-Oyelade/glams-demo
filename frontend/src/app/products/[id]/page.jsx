@@ -6,6 +6,7 @@ import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
 import { CartContext } from "@/app/context/cartContext";
 import { useParams } from "next/navigation";
+import { ShieldCheck } from "lucide-react";
 
 const page = () => {
   const params = useParams();
@@ -164,11 +165,16 @@ const page = () => {
 
           {/* info */}
           <div className="py-10">
-            <p className="text-sm italic">
+            <p className="text-sm italic text-gray-500">
               This is a demo site built for showcase purposes only. Any
               products, prices or interaction are not real and are only included
               to demonstrate functionality
             </p>
+          </div>
+
+          <div className="flex gap-2 text-gray-600">
+            <ShieldCheck />
+            <span>Secure payment with Paystack</span>
           </div>
         </div>
       </div>
