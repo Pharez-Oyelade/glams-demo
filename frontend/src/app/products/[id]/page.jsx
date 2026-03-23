@@ -1,5 +1,6 @@
 import React from "react";
 import { products } from "@/app/assets/products";
+import Navbar from "@/app/components/Navbar";
 
 const page = async ({ params }) => {
   const { id } = await params;
@@ -10,9 +11,9 @@ const page = async ({ params }) => {
   if (!product) return <div>Product not found</div>;
 
   return (
-    <div>
+    <section>
       <div>{product.name}</div>
-    </div>
+    </section>
   );
 };
 
