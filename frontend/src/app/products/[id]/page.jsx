@@ -23,23 +23,23 @@ const page = () => {
   if (!product) return <div>Product not found</div>;
 
   return (
-    <section>
-      <div className="grid grid-rows md:grid-cols-2 gap-10 md:h-[95vh] pt-5">
+    <section className="min-h-screen">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-10 pt-5">
         {/* ................. IMAGE AND IMAGE PREVIEWS ................ */}
-        <div className="w-full md:h-[90%] md:overflow-hidden">
+        <div className="w-full max-h-[60vh] md:max-h-[85vh] md:overflow-hidden">
           <div className="w-full h-full flex flex-col md:flex-row-reverse gap-3">
-            <div className="h-full w-full md:w-[80%] md:overflow-hidden rounded-tr-[3rem] rounded-bl-[3rem]">
+            <div className="h-[80%] md:h-full w-full md:w-[80%] md:overflow-hidden rounded-tr-[3rem] rounded-bl-[3rem]">
               <Image
                 src={product.image}
                 width={700}
                 height={700}
                 alt={`${product.image} image`}
                 loading="eager"
-                className="w-full object-cover hover:scale-105 transition-all duration-150 ease-in rounded-tr-[3rem] rounded-bl-[3rem]"
+                className="w-full h-full object-cover hover:scale-105 transition-all duration-150 ease-in rounded-tr-[3rem] rounded-bl-[3rem]"
               />
             </div>
 
-            <div className="h-full md:w-[20%] flex md:flex-col gap-3 md:gap-5">
+            <div className="h-[15%] md:h-full w-full md:w-[15%] flex md:flex-col justify-center gap-3 md:gap-5">
               {[1, 2, 3, 4, 5].map((p) => (
                 <div key={p} className="md:overflow-hidden">
                   <Image
@@ -47,7 +47,7 @@ const page = () => {
                     width={700}
                     height={700}
                     alt={`${product.image} image`}
-                    className="w-full object-cover hover:scale-105 transition-all duration-150 ease-in"
+                    className="w-full h-full object-cover hover:scale-105 transition-all duration-150 ease-in"
                   />
                 </div>
               ))}
@@ -56,7 +56,7 @@ const page = () => {
         </div>
 
         {/* .................... PRODUCT DETAILS .................. */}
-        <div className="w-full pt-5">
+        <div className="w-full pt-5 md:sticky md:top-20 md:max-h-[75vh]">
           <div className="space-y-2">
             <h1 className="font-bold text-5xl ">
               {product.name} - Demo Product
