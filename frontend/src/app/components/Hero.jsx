@@ -67,7 +67,7 @@ const Hero = () => {
           >
             <span className="w-2 h-2 rounded-full bg-glams-pink animate-pulse" />
             <span className="font-poppins text-xs font-semibold tracking-widest uppercase text-glams-charcoal">
-              Handmade in Nigeria
+              Demo site built for showcase
             </span>
           </div>
         </motion.div>
