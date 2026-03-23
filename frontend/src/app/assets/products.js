@@ -1,7 +1,7 @@
 export const products = [
   {
     id: 1,
-    name: "Product 1",
+    name: "Black Dress",
     price: 45000,
     image: "/product1.jpeg",
     description: "Product 1 description",
@@ -14,7 +14,7 @@ export const products = [
   },
   {
     id: 2,
-    name: "Product 2",
+    name: "Blue Top",
     price: 200000,
     image: "/product2.jpeg",
     description: "Product 2 description",
@@ -27,7 +27,7 @@ export const products = [
   },
   {
     id: 3,
-    name: "Product 3",
+    name: "Casual",
     price: 35000,
     image: "/product3.jpeg",
     description: "Product 3 description",
@@ -40,7 +40,7 @@ export const products = [
   },
   {
     id: 4,
-    name: "Product 4",
+    name: "Dress with mini Jacket",
     price: 40000,
     image: "/product4.jpeg",
     description: "Product 4 description",
@@ -53,7 +53,7 @@ export const products = [
   },
   {
     id: 5,
-    name: "Product 5",
+    name: "Black Dress",
     price: 50500,
     image: "/product5.jpeg",
     description: "Product 5 description",
