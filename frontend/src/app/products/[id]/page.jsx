@@ -14,6 +14,7 @@ const page = () => {
   const { addToCart, formatPrice } = useContext(CartContext);
 
   const [selectedSize, setSelectedSize] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
   const idNum = Number(id);
   const product = products.find((p) => p.id === idNum);
@@ -64,7 +65,7 @@ const page = () => {
 
           <hr className="my-5 text-gray-400" />
 
-          <div className="space-y-10">
+          <div className="space-y-6">
             {/* ................ Colors .............. */}
             <div>
               <h3 className="font-bold">Select colors</h3>
@@ -96,6 +97,78 @@ const page = () => {
                 </div>
               </div>
             </div>
+
+            {/* ................ Quantity ................. */}
+            <div className="w-[20%] space-y-2">
+              <h3 className="font-bold">Quantity</h3>
+              <div>
+                <div className="flex justify-between gap-5 border py-2 px-3">
+                  <span
+                    onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+                    className="cursor-pointer"
+                  >
+                    -
+                  </span>
+                  <span>{quantity}</span>
+                  <span
+                    onClick={() => setQuantity((prev) => prev + 1)}
+                    className="cursor-pointer"
+                  >
+                    +
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* ................ CTA ................... */}
+            <div className="flex gap-8">
+              <button
+                onClick={() => addToCart(product)}
+                className="
+                relative overflow-hidden
+                bg-glams-charcoal text-white
+                px-8 py-3
+                text-xs font-poppins font-bold tracking-widest uppercase
+                cursor-pointer
+                group
+                transition-all duration-300
+              "
+              >
+                {/* animated fill on hover */}
+                <span
+                  className="
+                  absolute inset-0 bg-glams-pink
+                  translate-x-[-101%] group-hover:translate-x-0
+                  transition-transform duration-300 ease-in-out
+                "
+                />
+                <span className="relative z-10">Add to Cart</span>
+              </button>
+
+              <button
+                className="
+                relative
+                px-8 py-3
+                text-xs font-poppins font-bold tracking-widest uppercase
+                text-glams-charcoal
+                cursor-pointer
+                border-b-2 border-glams-charcoal
+                hover:border-glams-pink hover:text-glams-pink
+                transition-colors duration-300
+              "
+              >
+                Add to Wishlist
+              </button>
+            </div>
+          </div>
+
+          {/* info */}
+          <div className="py-10">
+            <p className="text-sm italic">
+              This is a demo site built for showcase purposes only. Any
+              products, prices or interaction are not real and are only included
+              to demonstrate functionality
+            </p>
           </div>
         </div>
       </div>
