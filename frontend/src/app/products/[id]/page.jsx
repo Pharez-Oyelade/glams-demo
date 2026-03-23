@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { products } from "@/app/assets/products";
 import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
@@ -12,6 +12,8 @@ const page = () => {
   const { id } = params;
 
   const { addToCart, formatPrice } = useContext(CartContext);
+
+  const [selectedSize, setSelectedSize] = useState("");
 
   const idNum = Number(id);
   const product = products.find((p) => p.id === idNum);
@@ -50,12 +52,50 @@ const page = () => {
           </div>
         </div>
 
+        {/* .................... PRODUCT DETAILS .................. */}
         <div className="w-full pt-5">
-          <div>
+          <div className="space-y-2">
             <h1 className="font-bold text-5xl ">
               {product.name} - Demo Product
             </h1>
-            <p>{formatPrice(product.price)}</p>
+            <p className="text-2xl">{formatPrice(product.price)}</p>
+            <p>{product.description}</p>
+          </div>
+
+          <hr className="my-5 text-gray-400" />
+
+          <div className="space-y-10">
+            {/* ................ Colors .............. */}
+            <div>
+              <h3 className="font-bold">Select colors</h3>
+              <div className="flex gap-3 pt-2">
+                {product.colors.map((color) => (
+                  <div
+                    key={color}
+                    className={`w-5 h-5 rounded-full ring-1 ring-black/10 ring-offset-1 cursor-pointer`}
+                    style={{ backgroundColor: color }}
+                  ></div>
+                ))}
+              </div>
+            </div>
+
+            {/* ............. Sizes ............ */}
+            <div>
+              <div>
+                <h3 className="font-bold">Select size</h3>
+                <div className="flex gap-3 pt-2">
+                  {product.sizes.map((size) => (
+                    <div
+                      onClick={() => setSelectedSize(size)}
+                      key={size}
+                      className={`border py-2 px-5 rounded-xl transition-colors duration-300 cursor-pointer ${selectedSize === size ? "bg-red-500 text-white border-red-500" : "bg-transparent hover:bg-red-300"}`}
+                    >
+                      {size}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
