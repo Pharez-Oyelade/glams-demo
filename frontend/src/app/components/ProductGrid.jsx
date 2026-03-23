@@ -3,6 +3,7 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { Heart, ShoppingBag } from "lucide-react";
 import { CartContext } from "../context/cartContext";
 
@@ -37,32 +38,34 @@ const ProductGrid = ({ products = [] }) => {
           className="group flex flex-col"
         >
           {/* Image wrapper */}
-          <div className="relative w-full overflow-hidden rounded-2xl bg-glams-blush aspect-3/4">
-            <Image
-              src={product.image}
-              alt={product.name}
-              fill
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-            />
+          <Link href={`/products/${product.id}`}>
+            <div className="relative w-full overflow-hidden rounded-2xl bg-glams-blush aspect-3/4">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
 
-            {/* Top actions */}
-            <div className="absolute top-3 right-3 flex flex-col gap-2">
-              <button className="w-8 h-8 sm:w-9 sm:h-9 bg-white rounded-full flex items-center justify-center shadow-md opacity-100 translate-y-0 md:opacity-0 md:group-hover:opacity-100 md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-300">
-                <Heart className="w-4 h-4 text-glams-pink" />
-              </button>
-            </div>
+              {/* Top actions */}
+              <div className="absolute top-3 right-3 flex flex-col gap-2">
+                <button className="w-8 h-8 sm:w-9 sm:h-9 bg-white rounded-full flex items-center justify-center shadow-md opacity-100 translate-y-0 md:opacity-0 md:group-hover:opacity-100 md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-300">
+                  <Heart className="w-4 h-4 text-glams-pink" />
+                </button>
+              </div>
 
-            {/* Quick add — slides up from bottom */}
-            <div className="absolute bottom-0 left-0 right-0 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300 ease-out">
-              <button
-                onClick={() => addToCart(product)}
-                className="w-full bg-glams-charcoal text-white font-poppins text-[11px] font-semibold uppercase tracking-widest py-3.5 flex items-center justify-center gap-2 hover:bg-glams-pink transition-colors duration-300"
-              >
-                <ShoppingBag className="w-4 h-4" />
-                Add to Cart
-              </button>
+              {/* Quick add — slides up from bottom */}
+              <div className="absolute bottom-0 left-0 right-0 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-300 ease-out">
+                <button
+                  onClick={() => addToCart(product)}
+                  className="w-full bg-glams-charcoal text-white font-poppins text-[11px] font-semibold uppercase tracking-widest py-3.5 flex items-center justify-center gap-2 hover:bg-glams-pink transition-colors duration-300"
+                >
+                  <ShoppingBag className="w-4 h-4" />
+                  Add to Cart
+                </button>
+              </div>
             </div>
-          </div>
+          </Link>
 
           {/* Product info */}
           <div className="pt-3.5 flex flex-col gap-1">
