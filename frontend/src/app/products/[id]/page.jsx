@@ -1,10 +1,17 @@
-import React from "react";
+"use client";
+
+import React, { useContext } from "react";
 import { products } from "@/app/assets/products";
 import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
+import { CartContext } from "@/app/context/cartContext";
+import { useParams } from "next/navigation";
 
-const page = async ({ params }) => {
-  const { id } = await params;
+const page = () => {
+  const params = useParams();
+  const { id } = params;
+
+  const { addToCart, formatPrice } = useContext(CartContext);
 
   const idNum = Number(id);
   const product = products.find((p) => p.id === idNum);
@@ -13,7 +20,7 @@ const page = async ({ params }) => {
 
   return (
     <section>
-      <div className="grid grid-cols-2 h-screen">
+      <div className="grid grid-cols-2 gap-10 h-[95vh] pt-5">
         {/* ................. IMAGE AND IMAGE PREVIEWS ................ */}
         <div className="w-full h-[90%] overflow-hidden">
           <div className="w-full h-full flex flex-row-reverse gap-3">
@@ -43,7 +50,14 @@ const page = async ({ params }) => {
           </div>
         </div>
 
-        <div className="w-full"></div>
+        <div className="w-full pt-5">
+          <div>
+            <h1 className="font-bold text-5xl ">
+              {product.name} - Demo Product
+            </h1>
+            <p>{formatPrice(product.price)}</p>
+          </div>
+        </div>
       </div>
     </section>
   );
